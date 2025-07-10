@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="Arun Chaudhary" />
+  <meta name="description" content="Arun Chaudhary LinkTree Profile" />
+  <title>Arun Chaudhary | Links</title>
+
+  <!-- Google Font + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/fcf5d0bef4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- ✅ Top Section -->
+    <div class="top-section">
+      <img class="avatar" src="images/avatar.png" alt="Arun Chaudhary" />
+      <h1>Arun Chaudhary</h1>
+      <p class="subtitle">Java Developer | Software Engineer</p>
+    </div>
+
+    <!-- ✅ Link Grid -->
+    <div class="links">
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/arun-chaudhary-80800a2b0/" class="link-item" target="_blank">
+        <div class="link-text">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </div>
+        <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('https://www.linkedin.com/in/arun-chaudhary-80800a2b0/')">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/arunchaudhary02" class="link-item" target="_blank">
+        <div class="link-text">
+          <i class="fa-brands fa-github"></i> GitHub
+        </div>
+        <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('https://github.com/arunchaudhary02')">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </a>
+
+      <!-- LeetCode -->
+      <a href="https://leetcode.com/u/Arun_chaudhary01/" class="link-item" target="_blank">
+        <div class="link-text">
+          <i class="fa-solid fa-code"></i> LeetCode
+        </div>
+        <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('https://leetcode.com/u/Arun_chaudhary01/')">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </a>
+
+      <!-- Portfolio -->
+      <a href="https://your-portfolio-link.com" class="link-item" target="_blank">
+        <div class="link-text">
+          <i class="fa-solid fa-globe"></i> Portfolio
+        </div>
+        <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('https://your-portfolio-link.com')">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </a>
+
+      <!-- Project -->
+      <a href="https://your-project-link.com" class="link-item" target="_blank">
+        <div class="link-text">
+          <i class="fa-solid fa-folder-open"></i> Project
+        </div>
+        <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('https://your-project-link.com')">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:arun.alan01@gmail.com" class="link-item">
+        <div class="link-text">
+          <i class="fa-regular fa-envelope"></i> Email Me
+        </div>
+        <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('arun.alan01@gmail.com')">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </a>
+
+      <!-- Call -->
+      <a href="tel:+917037125227" class="link-item">
+        <div class="link-text">
+          <i class="fa-solid fa-phone"></i> Call Me
+        </div>
+        <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('+917037125227')">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/917037125227?text=Hello%20Arun%2C%20I%20came%20across%20your%20profile%20and%20would%20like%20to%20connect%20with%20you%20regarding%20potential%20opportunities." class="link-item" target="_blank">
+        <div class="link-text">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Me
+        </div>
+        <button class="copy-btn" onclick="event.preventDefault(); copyToClipboard('https://wa.me/917037125227')">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Arun Chaudhary</p>
+  </footer>
+
+  <!-- ✅ Toast Notification -->
+  <div id="toast">Copied!</div>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    // Year updater
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Copy to clipboard with toast
+    function copyToClipboard(text) {
+      const cleanText = text.replace(/\s+/g, '');
+      navigator.clipboard.writeText(cleanText).then(() => {
+        const toast = document.getElementById("toast");
+        toast.textContent = "Copied!";
+        toast.classList.add("show");
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

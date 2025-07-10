@@ -1,0 +1,146 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(to bottom, #4e9fb7, #2d4657); /* Teal to navy */
+  color: #1f2937; /* Dark gray for base text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Main layout container */
+.container {
+  width: 100%;
+  max-width: 900px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Top section (avatar + name + title) */
+.top-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #c084fc; /* Soft purple accent */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff; /* White text on dark bg */
+}
+
+.subtitle {
+  color: #e0e7ff; /* Light grayish blue */
+  font-size: 1rem;
+}
+
+/* Grid of links (2 columns, 4 rows max) */
+.links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+/* Each card link */
+.link-item {
+  background-color: #ffffff; /* White card */
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #1f2937; /* Dark text */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.link-item:hover {
+  transform: translateY(-3px);
+  background-color: #f3f4f6; /* Light gray hover */
+}
+
+.link-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: #a78bfa; /* Purple accent */
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  color: #6d28d9; /* Deeper purple */
+}
+
+/* Toast Notification */
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981; /* Green success */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, bottom 0.4s ease;
+  z-index: 999;
+  font-size: 0.95rem;
+}
+
+#toast.show {
+  opacity: 1;
+  bottom: 50px;
+}
+
+/* Hide footer if any */
+footer {
+  display: none;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
